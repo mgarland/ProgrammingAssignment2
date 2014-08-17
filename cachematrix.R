@@ -1,10 +1,10 @@
-## Coursera R Programming course - rprog-006
+## Coursera R Programming course (rprog-006)   Programming Assignment #2
 ##
 ## Add the capability to cache the inverse of a matrix.
-## This is implemented using the funcions: makeCacheMatrix and cacheSolve.
+## This is implemented using the functions: makeCacheMatrix and cacheSolve.
 ##
 ## makeCacheMatrix(x = matrix)
-##   adds caching capability to the matrix
+##   adds caching capability to a matrix
 ##
 ## cacheSolve(x, ...)
 ##   returns the inverse of the matrix created with makeCacheMatrix.
@@ -13,8 +13,16 @@
 ##   caches it by storing it in makeCacheMatrix.
 ##
 ## Example usage:
-##   
-##   
+##   m <- makeCacheMatrix(matrix(1:4, 2,2))
+##   cacheSolve(m)   # first call creates and caches the inverse
+##   cacheSolve(m)   # returns the cached inverse
+##
+##   m$set(matrix(6:9, 2,2))  # change the matrix, also clears the cached value
+##   cacheSolve(m)            # create and cache the inverse
+##   cacheSolve(m)            # returns the cached inverse
+##
+##   m$get()                  # returns the matrix
+## 
 
 ## Add caching capability to a matrix
 ## This version caches the inverse of the matrix
